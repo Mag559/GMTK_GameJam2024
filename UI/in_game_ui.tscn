@@ -1,0 +1,251 @@
+[gd_scene load_steps=15 format=3 uid="uid://bcs4te5ib6su"]
+
+[ext_resource type="Script" path="res://UI/add_worker.gd" id="1_gmcku"]
+[ext_resource type="Script" path="res://UI/workers_amount.gd" id="2_5dh1u"]
+[ext_resource type="Script" path="res://UI/Button2.gd" id="2_sjohs"]
+[ext_resource type="Script" path="res://UI/work_time_amount.gd" id="3_508nb"]
+[ext_resource type="Script" path="res://UI/work_time_slider.gd" id="3_ogbok"]
+[ext_resource type="Script" path="res://UI/wage_amount.gd" id="4_xdhf1"]
+[ext_resource type="Script" path="res://UI/wage_slider.gd" id="5_btf2l"]
+[ext_resource type="Script" path="res://UI/happiness_amount.gd" id="5_kh22f"]
+[ext_resource type="Script" path="res://UI/daily_income_amount.gd" id="6_3dug8"]
+[ext_resource type="Script" path="res://UI/cost_of_wages_amount.gd" id="7_6bdht"]
+[ext_resource type="Script" path="res://UI/money_amount.gd" id="9_uyxg6"]
+[ext_resource type="Script" path="res://UI/reputation_amount.gd" id="10_rltyb"]
+[ext_resource type="Script" path="res://UI/day_amount.gd" id="11_2ix8e"]
+[ext_resource type="Script" path="res://UI/turnover_amount.gd" id="12_7hx4y"]
+
+[node name="InGameUI" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.879167
+anchor_top = 0.32963
+anchor_right = 0.96045
+anchor_bottom = 0.4072
+offset_right = -0.0640001
+offset_bottom = 0.224
+text = "add worker"
+script = ExtResource("1_gmcku")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button2" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.883854
+anchor_top = 0.601852
+anchor_right = 0.965137
+anchor_bottom = 0.679422
+offset_right = -0.0640001
+offset_bottom = 0.224
+text = "next day"
+script = ExtResource("2_sjohs")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1875
+anchor_top = 0.223148
+anchor_right = 0.357458
+anchor_bottom = 0.279333
+offset_right = -0.320004
+offset_bottom = 0.319998
+theme_override_font_sizes/font_size = 28
+text = "amount of employees: "
+script = ExtResource("2_5dh1u")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.189583
+anchor_top = 0.288889
+anchor_right = 0.373083
+anchor_bottom = 0.345074
+offset_right = -0.320004
+offset_bottom = 0.319998
+theme_override_font_sizes/font_size = 28
+text = "working this many hours: "
+script = ExtResource("3_508nb")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label3" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.189583
+anchor_top = 0.346296
+anchor_right = 0.373083
+anchor_bottom = 0.402481
+offset_right = -0.320004
+offset_bottom = 0.319998
+theme_override_font_sizes/font_size = 28
+text = "at this hourly  wage: "
+script = ExtResource("4_xdhf1")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label4" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.190625
+anchor_top = 0.412037
+anchor_right = 0.374125
+anchor_bottom = 0.468222
+offset_right = -0.320004
+offset_bottom = 0.319998
+theme_override_font_sizes/font_size = 28
+text = "with a happiness: "
+script = ExtResource("5_kh22f")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label5" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.188542
+anchor_top = 0.482407
+anchor_right = 0.387667
+anchor_bottom = 0.538593
+offset_right = -0.320004
+offset_bottom = 0.319998
+theme_override_font_sizes/font_size = 28
+text = "generate daily income totaling: "
+script = ExtResource("6_3dug8")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label6" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.188021
+anchor_top = 0.562963
+anchor_right = 0.387146
+anchor_bottom = 0.619148
+offset_right = -0.320004
+offset_bottom = 0.319998
+theme_override_font_sizes/font_size = 28
+text = "their wages cost: "
+script = ExtResource("7_6bdht")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label7" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.184375
+anchor_top = 0.646296
+anchor_right = 0.3835
+anchor_bottom = 0.702481
+offset_right = -0.320004
+offset_bottom = 0.319998
+theme_override_font_sizes/font_size = 28
+text = "current money: "
+script = ExtResource("9_uyxg6")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label8" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.185937
+anchor_top = 0.721296
+anchor_right = 0.385063
+anchor_bottom = 0.777481
+offset_right = -0.320004
+offset_bottom = 0.319998
+theme_override_font_sizes/font_size = 28
+text = "reputation: "
+script = ExtResource("10_rltyb")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label9" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.188542
+anchor_top = 0.803704
+anchor_right = 0.387667
+anchor_bottom = 0.859889
+offset_right = -0.320004
+offset_bottom = 0.319998
+theme_override_font_sizes/font_size = 28
+text = "days passed: "
+script = ExtResource("11_2ix8e")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label10" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.188021
+anchor_top = 0.880556
+anchor_right = 0.387146
+anchor_bottom = 0.936741
+offset_right = -0.320004
+offset_bottom = 0.319998
+theme_override_font_sizes/font_size = 28
+text = "turnover: "
+script = ExtResource("12_7hx4y")
+metadata/_edit_use_anchors_ = true
+
+[node name="HSlider" type="HSlider" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.844271
+anchor_top = 0.464815
+anchor_right = 0.988542
+anchor_bottom = 0.512815
+offset_bottom = 0.16
+min_value = 1.0
+max_value = 16.0
+value = 8.0
+tick_count = 16
+script = ExtResource("3_ogbok")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Control/HSlider"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.223958
+anchor_top = -0.269231
+anchor_right = 0.635
+anchor_bottom = 0.173
+offset_right = 0.0799866
+offset_bottom = 0.00399971
+text = "work time"
+metadata/_edit_use_anchors_ = true
+
+[node name="HSlider2" type="HSlider" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.844271
+anchor_top = 0.531481
+anchor_right = 0.988542
+anchor_bottom = 0.579481
+offset_bottom = 0.16
+min_value = 5.0
+max_value = 50.0
+value = 10.0
+script = ExtResource("5_btf2l")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Control/HSlider2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.223827
+anchor_top = -0.269231
+anchor_right = 0.685632
+anchor_bottom = 0.173
+offset_right = 0.0799866
+offset_bottom = 0.00399971
+text = "wage (per hour)"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Control/Button" to="Control/Button" method="_on_pressed"]
+[connection signal="pressed" from="Control/Button2" to="Control/Button2" method="_on_pressed"]
+[connection signal="value_changed" from="Control/HSlider" to="Control/HSlider" method="_on_value_changed"]
+[connection signal="value_changed" from="Control/HSlider2" to="Control/HSlider2" method="_on_value_changed"]
