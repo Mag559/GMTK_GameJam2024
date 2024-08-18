@@ -23,6 +23,11 @@ var employee_cost_exponent := 3.0
 var employee_cost_mult := 5.0
 var employee_cost_add_on := 500.0
 
+var projects_earned := 0
+var projects_to_choose := 0
+var reputation_required_exponential_base := 3.0
+var reputation_required_add_on := 20.0
+
 
 func get_daily_income() -> float:
 	return employees * pow(work_time * effective_work_time_mult * income_multiplier
@@ -44,6 +49,7 @@ func next_day() -> void:
 	money += get_daily_income()
 	money -= get_daily_wages_cost()
 	turnover += get_daily_income()
+	check_if_new_project()
 	days_passed += 1
 	
 
@@ -54,4 +60,14 @@ func get_new_employee_cost() -> float:
 func hire_new_employee() -> void:
 	money -= get_new_employee_cost()
 	StatManager.employees += 1
-	
+	EventCentre.new_hire.emit()
+
+
+func check_if_new_project() -> void:
+	if reputation > get_reputation_for_new_project():
+		projects_earned += 1
+		projects_to_choose += 1
+
+
+func get_reputation_for_new_project() -> float:
+	return pow(reputation_required_exponential_base, projects_earned) + reputation_required_add_on

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bcs4te5ib6su"]
+[gd_scene load_steps=16 format=3 uid="uid://bcs4te5ib6su"]
 
 [ext_resource type="Script" path="res://UI/add_worker.gd" id="1_gmcku"]
 [ext_resource type="Script" path="res://UI/workers_amount.gd" id="2_5dh1u"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" path="res://UI/reputation_amount.gd" id="10_rltyb"]
 [ext_resource type="Script" path="res://UI/day_amount.gd" id="11_2ix8e"]
 [ext_resource type="Script" path="res://UI/turnover_amount.gd" id="12_7hx4y"]
+[ext_resource type="PackedScene" uid="uid://bu1l4mqnm47v8" path="res://office_building.tscn" id="15_vplvd"]
 
 [node name="InGameUI" type="CanvasLayer"]
 
@@ -244,6 +245,13 @@ offset_right = 0.0799866
 offset_bottom = 0.00399971
 text = "wage (per hour)"
 metadata/_edit_use_anchors_ = true
+
+[node name="ScrollContainer" parent="Control" instance=ExtResource("15_vplvd")]
+layout_mode = 1
+anchor_left = 0.476042
+anchor_top = 0.00555556
+anchor_right = 0.802083
+anchor_bottom = 1.00741
 
 [connection signal="pressed" from="Control/Button" to="Control/Button" method="_on_pressed"]
 [connection signal="pressed" from="Control/Button2" to="Control/Button2" method="_on_pressed"]

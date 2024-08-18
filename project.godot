@@ -17,9 +17,15 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+EventCentre="*res://EventCentre.gd"
 StatManager="*res://StatManager.gd"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/size/mode=3
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
