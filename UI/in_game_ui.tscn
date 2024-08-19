@@ -1,32 +1,30 @@
-[gd_scene load_steps=30 format=3 uid="uid://bcs4te5ib6su"]
+[gd_scene load_steps=28 format=3 uid="uid://1sgi2ikosp2n"]
 
 [ext_resource type="Script" path="res://UI/add_worker.gd" id="1_gmcku"]
 [ext_resource type="Texture2D" uid="uid://c3efp1402q5xl" path="res://background_v1.png" id="1_xp53m"]
 [ext_resource type="Script" path="res://UI/workers_amount.gd" id="2_5dh1u"]
-[ext_resource type="Script" path="res://UI/Button2.gd" id="2_sjohs"]
 [ext_resource type="Script" path="res://UI/work_time_amount.gd" id="3_508nb"]
 [ext_resource type="Script" path="res://UI/work_time_slider.gd" id="3_ogbok"]
 [ext_resource type="Texture2D" uid="uid://b0lbdk10a0sf1" path="res://textures/hirework_v1.png" id="4_j8hm2"]
 [ext_resource type="Script" path="res://UI/wage_amount.gd" id="4_xdhf1"]
 [ext_resource type="Script" path="res://UI/wage_slider.gd" id="5_btf2l"]
-[ext_resource type="Texture2D" uid="uid://dea0g7ettdyk0" path="res://textures/nextday_v1.png" id="5_j1yrd"]
-[ext_resource type="Script" path="res://UI/happiness_amount.gd" id="5_kh22f"]
 [ext_resource type="Script" path="res://UI/daily_income_amount.gd" id="6_3dug8"]
 [ext_resource type="FontFile" uid="uid://dotdsj6wdrb1o" path="res://karma suture.ttf" id="6_qx76h"]
 [ext_resource type="Script" path="res://UI/cost_of_wages_amount.gd" id="7_6bdht"]
 [ext_resource type="Texture2D" uid="uid://bhoyxve7eppyy" path="res://textures/money_v1.png" id="8_cy5af"]
 [ext_resource type="Texture2D" uid="uid://bfr7vqxsl02rg" path="res://textures/hapy_v1.png" id="9_cuc8t"]
 [ext_resource type="Script" path="res://UI/money_amount.gd" id="9_uyxg6"]
-[ext_resource type="Script" path="res://UI/reputation_amount.gd" id="10_rltyb"]
 [ext_resource type="Script" path="res://UI/day_amount.gd" id="11_2ix8e"]
 [ext_resource type="Script" path="res://UI/turnover_amount.gd" id="12_7hx4y"]
 [ext_resource type="Texture2D" uid="uid://boqamu73p1fg6" path="res://textures/dollar_v1.png" id="13_vwt7b"]
 [ext_resource type="Texture2D" uid="uid://bqaal481o1nbl" path="res://textures/rep_v1.png" id="15_pp3vs"]
 [ext_resource type="PackedScene" uid="uid://bu1l4mqnm47v8" path="res://office_building.tscn" id="15_vplvd"]
 [ext_resource type="Texture2D" uid="uid://ci2f6b4m26s3a" path="res://textures/sunmoon_v1.png" id="16_0rsx5"]
+[ext_resource type="Texture2D" uid="uid://dneodcgxgotsd" path="res://textures/time_v1.png" id="16_fj40s"]
 [ext_resource type="Script" path="res://UI/choose_project.gd" id="16_stx6t"]
 [ext_resource type="PackedScene" uid="uid://bs3i0eil1be4q" path="res://time_controls.tscn" id="17_0rdfq"]
 [ext_resource type="PackedScene" uid="uid://bhb22of2ufww1" path="res://ReputationBar.tscn" id="20_63vpj"]
+[ext_resource type="PackedScene" uid="uid://c311yhoe8pxkl" path="res://HappinessBar.tscn" id="24_pcybt"]
 [ext_resource type="Texture2D" uid="uid://qt7oi8omw54k" path="res://textures/bigbox_v1.png" id="26_3cic1"]
 [ext_resource type="Texture2D" uid="uid://baxq3in7e2viv" path="res://textures/chooseproject_v1.png" id="27_1mh46"]
 
@@ -51,259 +49,200 @@ grow_vertical = 2
 texture = ExtResource("1_xp53m")
 stretch_mode = 5
 
-[node name="bigbox" type="Sprite2D" parent="Control"]
+[node name="bigbox" type="TextureRect" parent="Control"]
 modulate = Color(1, 1, 1, 0.34902)
-position = Vector2(459.398, 275)
-scale = Vector2(6.21687, 6.21687)
-texture = ExtResource("26_3cic1")
-
-[node name="Button" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.242188
-anchor_top = 0.128704
-anchor_right = 0.389096
-anchor_bottom = 0.171089
-offset_right = -0.0640001
-offset_bottom = 0.224
+anchor_left = 0.00625
+anchor_top = 0.00648148
+anchor_right = 0.603646
+anchor_bottom = 0.47963
+texture = ExtResource("26_3cic1")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="TextureButton" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.121296
+anchor_right = 0.572792
+anchor_bottom = 0.170333
+offset_right = -0.557678
+offset_bottom = 0.297836
+texture_normal = ExtResource("4_j8hm2")
+stretch_mode = 5
 script = ExtResource("1_gmcku")
 metadata/_edit_use_anchors_ = true
 
-[node name="hirework" type="Sprite2D" parent="Control/Button"]
-show_behind_parent = true
-position = Vector2(141, 23)
-scale = Vector2(4, 4)
-texture = ExtResource("4_j8hm2")
-
-[node name="Button2" type="Button" parent="Control"]
+[node name="Stats" type="VBoxContainer" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.347917
-anchor_top = 0.0490741
-anchor_right = 0.456804
-anchor_bottom = 0.0914593
-offset_right = -0.0640001
-offset_bottom = 0.224
-script = ExtResource("2_sjohs")
+anchor_left = 0.0223958
+anchor_top = 0.0259259
+anchor_right = 0.233854
+anchor_bottom = 0.467593
 metadata/_edit_use_anchors_ = true
 
-[node name="nextday" type="Sprite2D" parent="Control/Button2"]
-show_behind_parent = true
-position = Vector2(105, 23)
-scale = Vector2(4, 4)
-texture = ExtResource("5_j1yrd")
+[node name="HBoxContainer6" type="HBoxContainer" parent="Control/Stats"]
+layout_mode = 2
+size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="Control"]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.1875
-anchor_top = 0.223148
-anchor_right = 0.357458
-anchor_bottom = 0.279333
-offset_right = -0.320004
-offset_bottom = 0.319998
-theme_override_fonts/font = ExtResource("6_qx76h")
-theme_override_font_sizes/font_size = 28
-text = "amount of employees: "
-script = ExtResource("2_5dh1u")
-metadata/_edit_use_anchors_ = true
+[node name="dollar" type="TextureRect" parent="Control/Stats/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+texture = ExtResource("16_0rsx5")
+stretch_mode = 5
 
-[node name="Label2" type="Label" parent="Control"]
-visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.189583
-anchor_top = 0.288889
-anchor_right = 0.476208
-anchor_bottom = 0.345074
-offset_right = -0.320004
-offset_bottom = 0.319998
-theme_override_fonts/font = ExtResource("6_qx76h")
-theme_override_font_sizes/font_size = 30
-text = "working this many hours: "
-script = ExtResource("3_508nb")
-metadata/_edit_use_anchors_ = true
-
-[node name="Label3" type="Label" parent="Control"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0666667
-anchor_top = 0.393519
-anchor_right = 0.244438
-anchor_bottom = 0.449704
-offset_right = -0.320004
-offset_bottom = 0.319998
-theme_override_fonts/font = ExtResource("6_qx76h")
-theme_override_font_sizes/font_size = 30
-text = "Wage/h: "
-script = ExtResource("4_xdhf1")
-metadata/_edit_use_anchors_ = true
-
-[node name="wage" type="Sprite2D" parent="Control/Label3"]
-position = Vector2(-45.9994, 23.0003)
-scale = Vector2(4, 4)
-texture = ExtResource("8_cy5af")
-
-[node name="Label4" type="Label" parent="Control"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0692708
-anchor_top = 0.213889
-anchor_right = 0.242354
-anchor_bottom = 0.270074
-offset_right = -0.320004
-offset_bottom = 0.319998
-theme_override_fonts/font = ExtResource("6_qx76h")
-theme_override_font_sizes/font_size = 30
-text = "happiness: "
-script = ExtResource("5_kh22f")
-metadata/_edit_use_anchors_ = true
-
-[node name="hapy" type="Sprite2D" parent="Control/Label4"]
-position = Vector2(-53, 26.0001)
-scale = Vector2(4, 4)
-texture = ExtResource("9_cuc8t")
-
-[node name="Label5" type="Label" parent="Control"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.24375
-anchor_top = 0.211111
-anchor_right = 0.596521
-anchor_bottom = 0.267297
-offset_right = -0.320004
-offset_bottom = 0.319998
-theme_override_fonts/font = ExtResource("6_qx76h")
-theme_override_font_sizes/font_size = 30
-text = "Income/day: "
-script = ExtResource("6_3dug8")
-metadata/_edit_use_anchors_ = true
-
-[node name="Label6" type="Label" parent="Control"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.244792
-anchor_top = 0.387037
-anchor_right = 0.450688
-anchor_bottom = 0.443222
-offset_right = -0.320004
-offset_bottom = 0.319998
-theme_override_fonts/font = ExtResource("6_qx76h")
-theme_override_font_sizes/font_size = 30
-text = "Total Wage: "
-script = ExtResource("7_6bdht")
-metadata/_edit_use_anchors_ = true
-
-[node name="Label7" type="Label" parent="Control"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0677083
-anchor_top = 0.301852
-anchor_right = 0.235063
-anchor_bottom = 0.358037
-offset_right = -0.320004
-offset_bottom = 0.319998
-theme_override_fonts/font = ExtResource("6_qx76h")
-theme_override_font_sizes/font_size = 30
-text = "Money: "
-script = ExtResource("9_uyxg6")
-metadata/_edit_use_anchors_ = true
-
-[node name="dollar" type="Sprite2D" parent="Control/Label7"]
-position = Vector2(-50, 23)
-scale = Vector2(4, 4)
-texture = ExtResource("13_vwt7b")
-
-[node name="Label8" type="Label" parent="Control"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0671875
-anchor_top = 0.128704
-anchor_right = 0.240792
-anchor_bottom = 0.184889
-offset_right = -0.320004
-offset_bottom = 0.319998
-theme_override_fonts/font = ExtResource("6_qx76h")
-theme_override_font_sizes/font_size = 30
-text = "reputation: "
-script = ExtResource("10_rltyb")
-metadata/_edit_use_anchors_ = true
-
-[node name="rep" type="Sprite2D" parent="Control/Label8"]
-position = Vector2(-51, 27)
-scale = Vector2(4, 4)
-texture = ExtResource("15_pp3vs")
-
-[node name="Label9" type="Label" parent="Control"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0666667
-anchor_top = 0.0453704
-anchor_right = 0.265792
-anchor_bottom = 0.101555
-offset_right = -0.320004
-offset_bottom = 0.319998
+[node name="Label9" type="Label" parent="Control/Stats/HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("6_qx76h")
 theme_override_font_sizes/font_size = 30
 text = "day: "
 script = ExtResource("11_2ix8e")
 metadata/_edit_use_anchors_ = true
 
-[node name="sun" type="Sprite2D" parent="Control/Label9"]
-position = Vector2(-51, 21)
-scale = Vector2(4, 4)
-texture = ExtResource("16_0rsx5")
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/Stats"]
+layout_mode = 2
+size_flags_vertical = 3
 
-[node name="Label10" type="Label" parent="Control"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.24375
-anchor_top = 0.298148
-anchor_right = 0.442875
-anchor_bottom = 0.354333
-offset_right = -0.320004
-offset_bottom = 0.319998
+[node name="dollar" type="TextureRect" parent="Control/Stats/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+texture = ExtResource("13_vwt7b")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Control/Stats/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("6_qx76h")
+theme_override_font_sizes/font_size = 28
+text = "amount of employees: "
+script = ExtResource("2_5dh1u")
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/Stats"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="dollar2" type="TextureRect" parent="Control/Stats/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+texture = ExtResource("13_vwt7b")
+stretch_mode = 5
+
+[node name="Label7" type="Label" parent="Control/Stats/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("6_qx76h")
+theme_override_font_sizes/font_size = 30
+text = "Money: "
+script = ExtResource("9_uyxg6")
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Control/Stats"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="dollar2" type="TextureRect" parent="Control/Stats/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+texture = ExtResource("13_vwt7b")
+stretch_mode = 5
+
+[node name="Label5" type="Label" parent="Control/Stats/HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("6_qx76h")
+theme_override_font_sizes/font_size = 30
+text = "Income/day: "
+script = ExtResource("6_3dug8")
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="Control/Stats"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="dollar2" type="TextureRect" parent="Control/Stats/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+texture = ExtResource("13_vwt7b")
+stretch_mode = 5
+
+[node name="Label10" type="Label" parent="Control/Stats/HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("6_qx76h")
 theme_override_font_sizes/font_size = 30
 text = "turnover: "
 script = ExtResource("12_7hx4y")
 metadata/_edit_use_anchors_ = true
 
+[node name="HBoxContainer7" type="HBoxContainer" parent="Control/Stats"]
+layout_mode = 2
+
+[node name="TimeControls2" parent="Control" instance=ExtResource("17_0rdfq")]
+layout_mode = 1
+anchor_left = 0.146875
+anchor_top = 0.0407407
+anchor_right = 0.578646
+anchor_bottom = 0.0990741
+
 [node name="HSlider" type="HSlider" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0203125
-anchor_top = 0.512963
-anchor_right = 0.164584
-anchor_bottom = 0.560963
+anchor_left = 0.403646
+anchor_top = 0.312963
+anchor_right = 0.586458
+anchor_bottom = 0.360963
 offset_bottom = 0.16
 min_value = 1.0
 max_value = 16.0
 value = 8.0
-tick_count = 16
 script = ExtResource("3_ogbok")
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Control/HSlider"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.223958
-anchor_top = -0.269231
-anchor_right = 0.635
-anchor_bottom = 0.173
+anchor_left = 0.267147
+anchor_top = -0.538462
+anchor_right = 0.840863
+anchor_bottom = 0.134539
 offset_right = 0.0799866
 offset_bottom = 0.00399971
-text = "work time"
+theme_override_font_sizes/font_size = 28
+text = "work time: "
+script = ExtResource("3_508nb")
+metadata/_edit_use_anchors_ = true
+
+[node name="dollar" type="TextureRect" parent="Control/HSlider"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.045584
+anchor_top = -0.461538
+anchor_right = 0.21075
+anchor_bottom = 0.307615
+offset_right = 0.0266953
+offset_bottom = 0.0040102
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+texture = ExtResource("16_fj40s")
+stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
 [node name="HSlider2" type="HSlider" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.288542
-anchor_top = 0.517593
-anchor_right = 0.432813
-anchor_bottom = 0.565593
+anchor_left = 0.403125
+anchor_top = 0.218519
+anchor_right = 0.584896
+anchor_bottom = 0.276704
 offset_bottom = 0.16
 min_value = 5.0
 max_value = 50.0
@@ -314,55 +253,95 @@ metadata/_edit_use_anchors_ = true
 [node name="Label" type="Label" parent="Control/HSlider2"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.223827
-anchor_top = -0.269231
-anchor_right = 0.685632
-anchor_bottom = 0.173
+anchor_left = 0.23456
+anchor_top = -0.596155
+anchor_right = 0.696461
+anchor_bottom = 0.192231
+offset_left = 0.0269547
 offset_right = 0.0799866
-offset_bottom = 0.00399971
-text = "wage (per hour)"
+offset_bottom = 0.00401402
+theme_override_font_sizes/font_size = 28
+text = "wage / h"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_xdhf1")
+metadata/_edit_use_anchors_ = true
+
+[node name="dollar" type="TextureRect" parent="Control/HSlider2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0361011
+anchor_top = -0.634616
+anchor_right = 0.194946
+anchor_bottom = 0.192308
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+texture = ExtResource("8_cy5af")
+stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
 [node name="ScrollContainer" parent="Control" instance=ExtResource("15_vplvd")]
 layout_mode = 1
-anchor_left = 0.476042
-anchor_top = 0.00555556
-anchor_right = 0.802083
-anchor_bottom = 1.00741
+anchor_left = 0.609375
+anchor_top = -0.00185185
+anchor_right = 0.935416
+anchor_bottom = 1.0
 
-[node name="Button3" type="Button" parent="Control"]
+[node name="Button3" type="TextureButton" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.274479
-anchor_top = 0.9
-anchor_right = 0.469271
-anchor_bottom = 0.942593
+anchor_left = 0.384375
+anchor_top = 0.386111
+anchor_right = 0.579167
+anchor_bottom = 0.428704
+texture_normal = ExtResource("27_1mh46")
+stretch_mode = 5
 script = ExtResource("16_stx6t")
 metadata/_edit_use_anchors_ = true
 
-[node name="chooproject" type="Sprite2D" parent="Control/Button3"]
-show_behind_parent = true
-position = Vector2(187, 23)
-scale = Vector2(4, 4)
-texture = ExtResource("27_1mh46")
-
-[node name="Control" parent="Control" instance=ExtResource("17_0rdfq")]
+[node name="ReputationBar" parent="Control" instance=ExtResource("20_63vpj")]
 layout_mode = 1
-anchor_left = 0.132813
-anchor_top = 0.0481481
-anchor_right = 0.345313
-anchor_bottom = 0.239815
-
-[node name="ColorRect" parent="Control" instance=ExtResource("20_63vpj")]
-layout_mode = 1
-anchor_left = 0.0286458
-anchor_top = 0.62963
-anchor_right = 0.123708
-anchor_bottom = 0.93937
+anchor_left = 0.319792
+anchor_top = 0.125
+anchor_right = 0.356521
+anchor_bottom = 0.463444
 metadata/_edit_use_anchors_ = true
 
+[node name="rep" type="Sprite2D" parent="Control/ReputationBar"]
+position = Vector2(-12, 44)
+scale = Vector2(4, 4)
+texture = ExtResource("15_pp3vs")
+
+[node name="Label6" type="Label" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0739583
+anchor_top = -0.138889
+anchor_right = 0.279854
+anchor_bottom = -0.0827039
+offset_right = 146.175
+offset_bottom = 19.8636
+theme_override_fonts/font = ExtResource("6_qx76h")
+theme_override_font_sizes/font_size = 30
+text = "Total Wage: "
+script = ExtResource("7_6bdht")
+metadata/_edit_use_anchors_ = true
+
+[node name="HappinessBar" parent="Control" instance=ExtResource("24_pcybt")]
+layout_mode = 1
+anchor_left = 0.258333
+anchor_top = 0.118519
+anchor_right = 0.296104
+anchor_bottom = 0.463444
+metadata/_edit_use_anchors_ = true
+
+[node name="hapy" type="Sprite2D" parent="Control/HappinessBar"]
+position = Vector2(-24, 53)
+scale = Vector2(4, 4)
+texture = ExtResource("9_cuc8t")
+
 [connection signal="pressed" from="Control/Button" to="Control/Button" method="_on_pressed"]
-[connection signal="pressed" from="Control/Button2" to="Control/Button2" method="_on_pressed"]
 [connection signal="value_changed" from="Control/HSlider" to="Control/HSlider" method="_on_value_changed"]
 [connection signal="value_changed" from="Control/HSlider2" to="Control/HSlider2" method="_on_value_changed"]
 [connection signal="pressed" from="Control/Button3" to="Control/Button3" method="_on_pressed"]
