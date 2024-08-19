@@ -1,0 +1,116 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgo6arwbm715y"]
+
+[ext_resource type="Texture2D" uid="uid://bo0i32e853evb" path="res://icon.svg" id="1_n1lc4"]
+[ext_resource type="Script" path="res://project_popup.gd" id="2_03yc8"]
+
+[node name="Control" type="TextureRect"]
+anchors_preset = -1
+anchor_left = 0.225521
+anchor_top = 0.183333
+anchor_right = 0.732292
+anchor_bottom = 0.737037
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_n1lc4")
+script = ExtResource("2_03yc8")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.898253
+anchor_top = -0.0183946
+anchor_right = 0.999778
+anchor_bottom = 0.135074
+offset_right = 0.216
+offset_bottom = 0.226
+text = "X"
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.117163
+anchor_top = 0.152174
+anchor_right = 0.293936
+anchor_bottom = 0.277592
+metadata/_edit_use_anchors_ = true
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.124358
+anchor_top = 0.381271
+anchor_right = 0.301131
+anchor_bottom = 0.506689
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.406989
+anchor_top = 0.152174
+anchor_right = 0.583762
+anchor_bottom = 0.277592
+metadata/_edit_use_anchors_ = true
+
+[node name="Label5" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.405961
+anchor_top = 0.411371
+anchor_right = 0.582734
+anchor_bottom = 0.536789
+metadata/_edit_use_anchors_ = true
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.725591
+anchor_top = 0.14214
+anchor_right = 0.902364
+anchor_bottom = 0.267559
+metadata/_edit_use_anchors_ = true
+
+[node name="Label6" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.72148
+anchor_top = 0.438127
+anchor_right = 0.898253
+anchor_bottom = 0.563545
+metadata/_edit_use_anchors_ = true
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+anchor_left = 0.129496
+anchor_top = 0.643813
+anchor_right = 0.27852
+anchor_bottom = 0.765886
+text = "choose"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.42446
+anchor_top = 0.633779
+anchor_right = 0.573484
+anchor_bottom = 0.755853
+text = "choose"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button4" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.74409
+anchor_top = 0.622074
+anchor_right = 0.893114
+anchor_bottom = 0.744147
+text = "choose"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="choose_project" binds= [0]]
+[connection signal="pressed" from="Button3" to="." method="choose_project" binds= [1]]
+[connection signal="pressed" from="Button4" to="." method="choose_project" binds= [2]]

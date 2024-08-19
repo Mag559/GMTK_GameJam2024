@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bu1l4mqnm47v8"]
+[gd_scene load_steps=3 format=3 uid="uid://bu1l4mqnm47v8"]
 
 [ext_resource type="Script" path="res://work_space_holder.gd" id="1_bjqsy"]
+[ext_resource type="Texture2D" uid="uid://6pcblgamjkaj" path="res://room_v1.png" id="2_4mn6y"]
 
 [node name="ScrollContainer" type="ScrollContainer"]
 anchors_preset = -1
@@ -8,10 +9,24 @@ anchor_left = 0.279167
 anchor_top = 0.109259
 anchor_right = 0.564583
 anchor_bottom = 0.92963
+grow_vertical = 0
+vertical_scroll_mode = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 0
+size_flags_vertical = 3
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
 script = ExtResource("1_bjqsy")
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_4mn6y")
+expand_mode = 5
+stretch_mode = 5

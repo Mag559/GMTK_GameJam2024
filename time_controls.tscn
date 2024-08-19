@@ -1,0 +1,71 @@
+[gd_scene load_steps=2 format=3 uid="uid://bs3i0eil1be4q"]
+
+[ext_resource type="Script" path="res://time_controls.gd" id="1_vimg6"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchor_right = 0.2125
+anchor_bottom = 0.191667
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vimg6")
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0661765
+anchor_top = 0.00966184
+anchor_right = 0.262
+anchor_bottom = 0.203
+offset_right = 0.103989
+offset_bottom = -0.0209999
+toggle_mode = true
+button_pressed = true
+text = "paused"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.305136
+anchor_top = 0.0166667
+anchor_right = 0.502
+anchor_bottom = 0.189
+offset_right = -0.162018
+offset_bottom = -0.0200005
+toggle_mode = true
+text = "1x"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.558912
+anchor_top = 0.0277778
+anchor_right = 0.755776
+anchor_bottom = 0.200111
+offset_right = -0.162018
+offset_bottom = -0.0200005
+toggle_mode = true
+text = "2x"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button4" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.789216
+anchor_top = 0.0241546
+anchor_right = 0.98608
+anchor_bottom = 0.196488
+offset_right = -0.162018
+offset_bottom = -0.0200005
+toggle_mode = true
+text = "5x"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="toggled" from="Button" to="." method="pause"]
+[connection signal="toggled" from="Button2" to="." method="run" binds= [1.0]]
+[connection signal="toggled" from="Button3" to="." method="run" binds= [2.0]]
+[connection signal="toggled" from="Button4" to="." method="run" binds= [5.0]]

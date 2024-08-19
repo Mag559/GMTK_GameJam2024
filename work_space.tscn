@@ -4,13 +4,12 @@
 
 [node name="TextureRect" type="TextureRect"]
 anchors_preset = -1
-anchor_right = 0.039
-anchor_bottom = 0.037
-offset_right = 0.119995
-offset_bottom = 0.0400009
+anchor_right = 0.0390625
+anchor_bottom = 0.0375375
+offset_bottom = -0.540539
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource("1_j1nkw")
-expand_mode = 1
+expand_mode = 5
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true

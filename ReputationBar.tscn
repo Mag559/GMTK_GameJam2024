@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhb22of2ufww1"]
+
+[ext_resource type="Script" path="res://ReputationBar.gd" id="1_xb8f5"]
+
+[node name="ColorRect" type="ColorRect"]
+anchors_preset = -1
+anchor_right = 0.106
+anchor_bottom = 0.319
+offset_right = -0.52002
+offset_bottom = 0.47998
+script = ExtResource("1_xb8f5")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(1, 1, 0.0823529, 1)
+metadata/_edit_use_anchors_ = true

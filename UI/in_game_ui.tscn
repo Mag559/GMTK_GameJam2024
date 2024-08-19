@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://bcs4te5ib6su"]
+[gd_scene load_steps=21 format=3 uid="uid://bcs4te5ib6su"]
 
 [ext_resource type="Script" path="res://UI/add_worker.gd" id="1_gmcku"]
+[ext_resource type="Texture2D" uid="uid://c3efp1402q5xl" path="res://background_v1.png" id="1_xp53m"]
 [ext_resource type="Script" path="res://UI/workers_amount.gd" id="2_5dh1u"]
 [ext_resource type="Script" path="res://UI/Button2.gd" id="2_sjohs"]
 [ext_resource type="Script" path="res://UI/work_time_amount.gd" id="3_508nb"]
@@ -9,12 +10,16 @@
 [ext_resource type="Script" path="res://UI/wage_slider.gd" id="5_btf2l"]
 [ext_resource type="Script" path="res://UI/happiness_amount.gd" id="5_kh22f"]
 [ext_resource type="Script" path="res://UI/daily_income_amount.gd" id="6_3dug8"]
+[ext_resource type="FontFile" uid="uid://dotdsj6wdrb1o" path="res://karma suture.ttf" id="6_qx76h"]
 [ext_resource type="Script" path="res://UI/cost_of_wages_amount.gd" id="7_6bdht"]
 [ext_resource type="Script" path="res://UI/money_amount.gd" id="9_uyxg6"]
 [ext_resource type="Script" path="res://UI/reputation_amount.gd" id="10_rltyb"]
 [ext_resource type="Script" path="res://UI/day_amount.gd" id="11_2ix8e"]
 [ext_resource type="Script" path="res://UI/turnover_amount.gd" id="12_7hx4y"]
 [ext_resource type="PackedScene" uid="uid://bu1l4mqnm47v8" path="res://office_building.tscn" id="15_vplvd"]
+[ext_resource type="Script" path="res://UI/choose_project.gd" id="16_stx6t"]
+[ext_resource type="PackedScene" uid="uid://bs3i0eil1be4q" path="res://time_controls.tscn" id="17_0rdfq"]
+[ext_resource type="PackedScene" uid="uid://bhb22of2ufww1" path="res://ReputationBar.tscn" id="20_63vpj"]
 
 [node name="InGameUI" type="CanvasLayer"]
 
@@ -26,6 +31,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_xp53m")
+stretch_mode = 5
 
 [node name="Button" type="Button" parent="Control"]
 layout_mode = 1
@@ -62,6 +77,7 @@ anchor_right = 0.357458
 anchor_bottom = 0.279333
 offset_right = -0.320004
 offset_bottom = 0.319998
+theme_override_fonts/font = ExtResource("6_qx76h")
 theme_override_font_sizes/font_size = 28
 text = "amount of employees: "
 script = ExtResource("2_5dh1u")
@@ -72,11 +88,12 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.189583
 anchor_top = 0.288889
-anchor_right = 0.373083
+anchor_right = 0.476208
 anchor_bottom = 0.345074
 offset_right = -0.320004
 offset_bottom = 0.319998
-theme_override_font_sizes/font_size = 28
+theme_override_fonts/font = ExtResource("6_qx76h")
+theme_override_font_sizes/font_size = 30
 text = "working this many hours: "
 script = ExtResource("3_508nb")
 metadata/_edit_use_anchors_ = true
@@ -86,11 +103,12 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.189583
 anchor_top = 0.346296
-anchor_right = 0.373083
+anchor_right = 0.432979
 anchor_bottom = 0.402481
 offset_right = -0.320004
 offset_bottom = 0.319998
-theme_override_font_sizes/font_size = 28
+theme_override_fonts/font = ExtResource("6_qx76h")
+theme_override_font_sizes/font_size = 30
 text = "at this hourly  wage: "
 script = ExtResource("4_xdhf1")
 metadata/_edit_use_anchors_ = true
@@ -100,11 +118,12 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.190625
 anchor_top = 0.412037
-anchor_right = 0.374125
+anchor_right = 0.393396
 anchor_bottom = 0.468222
 offset_right = -0.320004
 offset_bottom = 0.319998
-theme_override_font_sizes/font_size = 28
+theme_override_fonts/font = ExtResource("6_qx76h")
+theme_override_font_sizes/font_size = 30
 text = "with a happiness: "
 script = ExtResource("5_kh22f")
 metadata/_edit_use_anchors_ = true
@@ -114,11 +133,12 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.188542
 anchor_top = 0.482407
-anchor_right = 0.387667
+anchor_right = 0.541313
 anchor_bottom = 0.538593
 offset_right = -0.320004
 offset_bottom = 0.319998
-theme_override_font_sizes/font_size = 28
+theme_override_fonts/font = ExtResource("6_qx76h")
+theme_override_font_sizes/font_size = 30
 text = "generate daily income totaling: "
 script = ExtResource("6_3dug8")
 metadata/_edit_use_anchors_ = true
@@ -128,11 +148,12 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.188021
 anchor_top = 0.562963
-anchor_right = 0.387146
+anchor_right = 0.393917
 anchor_bottom = 0.619148
 offset_right = -0.320004
 offset_bottom = 0.319998
-theme_override_font_sizes/font_size = 28
+theme_override_fonts/font = ExtResource("6_qx76h")
+theme_override_font_sizes/font_size = 30
 text = "their wages cost: "
 script = ExtResource("7_6bdht")
 metadata/_edit_use_anchors_ = true
@@ -146,7 +167,8 @@ anchor_right = 0.3835
 anchor_bottom = 0.702481
 offset_right = -0.320004
 offset_bottom = 0.319998
-theme_override_font_sizes/font_size = 28
+theme_override_fonts/font = ExtResource("6_qx76h")
+theme_override_font_sizes/font_size = 30
 text = "current money: "
 script = ExtResource("9_uyxg6")
 metadata/_edit_use_anchors_ = true
@@ -160,7 +182,8 @@ anchor_right = 0.385063
 anchor_bottom = 0.777481
 offset_right = -0.320004
 offset_bottom = 0.319998
-theme_override_font_sizes/font_size = 28
+theme_override_fonts/font = ExtResource("6_qx76h")
+theme_override_font_sizes/font_size = 30
 text = "reputation: "
 script = ExtResource("10_rltyb")
 metadata/_edit_use_anchors_ = true
@@ -174,7 +197,8 @@ anchor_right = 0.387667
 anchor_bottom = 0.859889
 offset_right = -0.320004
 offset_bottom = 0.319998
-theme_override_font_sizes/font_size = 28
+theme_override_fonts/font = ExtResource("6_qx76h")
+theme_override_font_sizes/font_size = 30
 text = "days passed: "
 script = ExtResource("11_2ix8e")
 metadata/_edit_use_anchors_ = true
@@ -188,7 +212,8 @@ anchor_right = 0.387146
 anchor_bottom = 0.936741
 offset_right = -0.320004
 offset_bottom = 0.319998
-theme_override_font_sizes/font_size = 28
+theme_override_fonts/font = ExtResource("6_qx76h")
+theme_override_font_sizes/font_size = 30
 text = "turnover: "
 script = ExtResource("12_7hx4y")
 metadata/_edit_use_anchors_ = true
@@ -253,7 +278,29 @@ anchor_top = 0.00555556
 anchor_right = 0.802083
 anchor_bottom = 1.00741
 
+[node name="Button3" type="Button" parent="Control"]
+layout_mode = 0
+anchor_left = 0.88125
+anchor_top = 0.737963
+anchor_right = 0.977083
+anchor_bottom = 0.823148
+text = "choose project"
+script = ExtResource("16_stx6t")
+metadata/_edit_use_anchors_ = true
+
+[node name="Control" parent="Control" instance=ExtResource("17_0rdfq")]
+layout_mode = 1
+
+[node name="ColorRect" parent="Control" instance=ExtResource("20_63vpj")]
+layout_mode = 1
+anchor_left = 0.0286458
+anchor_top = 0.62963
+anchor_right = 0.123708
+anchor_bottom = 0.93937
+metadata/_edit_use_anchors_ = true
+
 [connection signal="pressed" from="Control/Button" to="Control/Button" method="_on_pressed"]
 [connection signal="pressed" from="Control/Button2" to="Control/Button2" method="_on_pressed"]
 [connection signal="value_changed" from="Control/HSlider" to="Control/HSlider" method="_on_value_changed"]
 [connection signal="value_changed" from="Control/HSlider2" to="Control/HSlider2" method="_on_value_changed"]
+[connection signal="pressed" from="Control/Button3" to="Control/Button3" method="_on_pressed"]

@@ -10,7 +10,7 @@ var reference_wage_per_hour := 10.0  # work time / reference_work_time in happin
 var income_multiplier := 12.0
 var income_exponent := 1.0
 var income_add_on := 0.0
-var happiness_exp_base := 2.0  # for income calc
+var happiness_exp_base := 1.6  # for income calc
 var happiness_mult := 1.0
 var happiness_add_on := 0.0
 
@@ -25,8 +25,16 @@ var employee_cost_add_on := 500.0
 
 var projects_earned := 0
 var projects_to_choose := 0
-var reputation_required_exponential_base := 3.0
+var reputation_required_exponential_base := 2.0
 var reputation_required_add_on := 20.0
+var reputation_required_for_last_project := 0.0
+
+var run_seed : int
+
+
+func _ready():
+	randomize()
+	run_seed = randi_range(30, 4000)
 
 
 func get_daily_income() -> float:
@@ -41,7 +49,8 @@ func get_daily_wages_cost() -> float:
 
 
 func get_happiness() -> float:  # can go negative
-	return happiness_mult * (wage_per_hour / reference_wage_per_hour - (work_time + work_time_add_on) / reference_work_time)
+	return happiness_mult * (wage_per_hour / reference_wage_per_hour
+	 - (work_time + work_time_add_on) / reference_work_time) + happiness_add_on
 
 
 func next_day() -> void:
@@ -65,9 +74,11 @@ func hire_new_employee() -> void:
 
 func check_if_new_project() -> void:
 	if reputation > get_reputation_for_new_project():
+		reputation_required_for_last_project = get_reputation_for_new_project()
 		projects_earned += 1
 		projects_to_choose += 1
 
 
 func get_reputation_for_new_project() -> float:
-	return pow(reputation_required_exponential_base, projects_earned) + reputation_required_add_on
+	return pow(reputation_required_exponential_base, (projects_earned + 2)) \
+	 + reputation_required_add_on * (projects_earned + 1)
