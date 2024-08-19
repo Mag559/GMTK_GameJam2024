@@ -1,11 +1,14 @@
-extends Button
+extends TextureButton
 
 var project_popup := preload("res://project_popup.tscn")
+var last_popup
 
 func _process(delta):
 	disabled = StatManager.projects_to_choose == 0
 
 
 func _on_pressed():
-	var popup := project_popup.instantiate()
-	get_parent().add_child(popup)
+	if is_instance_valid(last_popup):
+		return
+	last_popup = project_popup.instantiate()
+	get_parent().add_child(last_popup)

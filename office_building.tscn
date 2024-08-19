@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bu1l4mqnm47v8"]
 
 [ext_resource type="Script" path="res://work_space_holder.gd" id="1_bjqsy"]
-[ext_resource type="Texture2D" uid="uid://6pcblgamjkaj" path="res://room_v1.png" id="2_4mn6y"]
+[ext_resource type="Texture2D" uid="uid://cte7ww2llig01" path="res://textures/room_v2.png" id="2_apu2a"]
 
 [node name="ScrollContainer" type="ScrollContainer"]
 anchors_preset = -1
@@ -27,6 +27,6 @@ script = ExtResource("1_bjqsy")
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
-texture = ExtResource("2_4mn6y")
+texture = ExtResource("2_apu2a")
 expand_mode = 5
 stretch_mode = 5

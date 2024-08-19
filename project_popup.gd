@@ -33,12 +33,12 @@ func _ready():
 	
 	
 	EventCentre.manual_pause.emit()
-	EventCentre.started_again.connect(queue_free)
+	EventCentre.started_again.connect(go_away)
 
 
 
 func _on_button_pressed():
-	queue_free()
+	go_away()
 
 
 func choose_project(project_index):
@@ -51,14 +51,19 @@ func choose_project(project_index):
 		1:
 			StatManager.effective_work_time_mult *= 0.85
 			StatManager.happiness_mult *= 1.4
-		3:
+		2:
 			StatManager.happiness_add_on += 1.0
-		4:
+		3:
 			StatManager.income_exponent += 0.4
-		5:
+		4:
 			StatManager.happiness_mult *= 1.2
-		6:
+		5:
 			StatManager.effective_work_time_mult *= 0.9
 			StatManager.happiness_add_on += 2.0
 	
+	go_away()
+
+
+func go_away() -> void:
+	EventCentre.manual_unpause.emit()
 	queue_free()

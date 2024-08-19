@@ -3,10 +3,12 @@ extends Control
 
 var day_progress := 0.0
 var passing_rate := 0.0
+var last_rate := 0.0
 
 
 func _ready():
 	EventCentre.manual_pause.connect(manual_pause)
+	EventCentre.manual_unpause.connect(manual_unpause)
 
 
 func _process(delta):
@@ -21,7 +23,19 @@ func next_day() -> void:
 
 
 func manual_pause() -> void:
+	last_rate = passing_rate
 	$Button.button_pressed = true
+	
+
+
+func manual_unpause() -> void:
+	match last_rate:
+		1.0:
+			$Button2.button_pressed = true
+		2.0:
+			$Button3.button_pressed = true
+		5.0:
+			$Button4.button_pressed = true
 
 
 func pause(on):
@@ -35,7 +49,7 @@ func pause(on):
 
 
 func run(toggled_on, new_rate : float):
-	var activated_button : Button
+	var activated_button : TextureButton
 	match new_rate:
 		1.0:
 			activated_button = $Button2
@@ -66,5 +80,4 @@ func run(toggled_on, new_rate : float):
 			EventCentre.started_again.emit()
 		else:
 			passing_rate = new_rate
-		
 

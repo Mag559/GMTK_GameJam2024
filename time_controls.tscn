@@ -1,91 +1,68 @@
-[gd_scene load_steps=6 format=3 uid="uid://bs3i0eil1be4q"]
+[gd_scene load_steps=8 format=3 uid="uid://bs3i0eil1be4q"]
 
 [ext_resource type="Script" path="res://time_controls.gd" id="1_vimg6"]
 [ext_resource type="Texture2D" uid="uid://bovt22imtyrs4" path="res://textures/timepause_v1.png" id="2_uccdy"]
 [ext_resource type="Texture2D" uid="uid://1erkvm41e81i" path="res://textures/timex1_v1.png" id="3_p5le7"]
 [ext_resource type="Texture2D" uid="uid://5lva7em2uy3x" path="res://textures/timex2_v1.png" id="4_qs61p"]
 [ext_resource type="Texture2D" uid="uid://b20fjasdsjlxc" path="res://textures/timex5_v1.png" id="5_h30am"]
+[ext_resource type="Texture2D" uid="uid://dea0g7ettdyk0" path="res://textures/nextday_v1.png" id="6_wwyy2"]
+[ext_resource type="Script" path="res://UI/Button2.gd" id="7_54ybd"]
 
-[node name="Control" type="Control"]
-layout_mode = 3
-anchor_right = 0.2125
-anchor_bottom = 0.191667
+[node name="TimeControls" type="HBoxContainer"]
+anchors_preset = -1
+anchor_right = 0.283333
+anchor_bottom = 0.037963
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
 script = ExtResource("1_vimg6")
 metadata/_edit_use_anchors_ = true
-metadata/_edit_lock_ = true
 
-[node name="Button" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.367392
-anchor_bottom = 0.222323
-offset_right = 0.103989
-offset_bottom = -0.0209999
+[node name="Button" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.18
 toggle_mode = true
 button_pressed = true
+texture_normal = ExtResource("2_uccdy")
+stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="pause" type="Sprite2D" parent="Button"]
-show_behind_parent = true
-position = Vector2(75, 23)
-scale = Vector2(4, 4)
-texture = ExtResource("2_uccdy")
-
-[node name="Button2" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.394608
-anchor_right = 0.566574
-anchor_bottom = 0.222318
-offset_right = -0.162018
-offset_bottom = -0.0200043
+[node name="Button2" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
 toggle_mode = true
+texture_normal = ExtResource("3_p5le7")
+stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="x1" type="Sprite2D" parent="Button2"]
-show_behind_parent = true
-position = Vector2(35, 23)
-scale = Vector2(4, 4)
-texture = ExtResource("3_p5le7")
-
-[node name="Button3" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.588235
-anchor_right = 0.760201
-anchor_bottom = 0.222318
-offset_right = -0.162018
-offset_bottom = -0.0200005
+[node name="Button3" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
 toggle_mode = true
+texture_normal = ExtResource("4_qs61p")
+stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="x2" type="Sprite2D" parent="Button3"]
-show_behind_parent = true
-position = Vector2(35, 23)
-scale = Vector2(4, 4)
-texture = ExtResource("4_qs61p")
-
-[node name="Button4" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.784314
-anchor_top = 0.00483091
-anchor_right = 0.956279
-anchor_bottom = 0.227149
-offset_right = -0.162018
-offset_bottom = -0.0200005
+[node name="Button4" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
 toggle_mode = true
+texture_normal = ExtResource("5_h30am")
+stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="x5" type="Sprite2D" parent="Button4"]
-show_behind_parent = true
-position = Vector2(35, 23)
-scale = Vector2(4, 4)
-texture = ExtResource("5_h30am")
+[node name="Button5" type="TextureButton" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.06
+texture_normal = ExtResource("6_wwyy2")
+stretch_mode = 5
+script = ExtResource("7_54ybd")
+metadata/_edit_use_anchors_ = true
 
 [connection signal="toggled" from="Button" to="." method="pause"]
 [connection signal="toggled" from="Button2" to="." method="run" binds= [1.0]]
 [connection signal="toggled" from="Button3" to="." method="run" binds= [2.0]]
 [connection signal="toggled" from="Button4" to="." method="run" binds= [5.0]]
+[connection signal="pressed" from="Button5" to="Button5" method="_on_pressed"]
