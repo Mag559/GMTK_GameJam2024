@@ -1,4 +1,4 @@
 extends Label
 
 func _process(delta):
-	text = "at this hourly wage: " + str(StatManager.wage_per_hour)
+	text = "Wage/h: " + str(StatManager.wage_per_hour)

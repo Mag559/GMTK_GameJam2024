@@ -3,4 +3,4 @@ extends Label
 
 
 func _process(delta):
-	text = "days passed: " + str(StatManager.days_passed)
+	text = "day: " + str(StatManager.days_passed)
