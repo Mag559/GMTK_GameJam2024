@@ -60,6 +60,8 @@ func next_day() -> void:
 	turnover += get_daily_income()
 	check_if_new_project()
 	days_passed += 1
+	print("====")
+	print(Time.get_ticks_msec())
 	
 
 func get_new_employee_cost() -> float:

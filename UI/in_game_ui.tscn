@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://1sgi2ikosp2n"]
+[gd_scene load_steps=27 format=3 uid="uid://1sgi2ikosp2n"]
 
 [ext_resource type="Script" path="res://UI/add_worker.gd" id="1_gmcku"]
 [ext_resource type="Texture2D" uid="uid://c3efp1402q5xl" path="res://background_v1.png" id="1_xp53m"]
@@ -8,14 +8,13 @@
 [ext_resource type="Texture2D" uid="uid://b0lbdk10a0sf1" path="res://textures/hirework_v1.png" id="4_j8hm2"]
 [ext_resource type="Script" path="res://UI/wage_amount.gd" id="4_xdhf1"]
 [ext_resource type="Script" path="res://UI/wage_slider.gd" id="5_btf2l"]
-[ext_resource type="Script" path="res://UI/daily_income_amount.gd" id="6_3dug8"]
 [ext_resource type="FontFile" uid="uid://dotdsj6wdrb1o" path="res://karma suture.ttf" id="6_qx76h"]
 [ext_resource type="Script" path="res://UI/cost_of_wages_amount.gd" id="7_6bdht"]
 [ext_resource type="Texture2D" uid="uid://bhoyxve7eppyy" path="res://textures/money_v1.png" id="8_cy5af"]
+[ext_resource type="Script" path="res://StatDisplayer.gd" id="9_6axbl"]
 [ext_resource type="Texture2D" uid="uid://bfr7vqxsl02rg" path="res://textures/hapy_v1.png" id="9_cuc8t"]
-[ext_resource type="Script" path="res://UI/money_amount.gd" id="9_uyxg6"]
+[ext_resource type="Script" path="res://StatDisplayer2.gd" id="10_c1i0v"]
 [ext_resource type="Script" path="res://UI/day_amount.gd" id="11_2ix8e"]
-[ext_resource type="Script" path="res://UI/turnover_amount.gd" id="12_7hx4y"]
 [ext_resource type="Texture2D" uid="uid://boqamu73p1fg6" path="res://textures/dollar_v1.png" id="13_vwt7b"]
 [ext_resource type="Texture2D" uid="uid://bqaal481o1nbl" path="res://textures/rep_v1.png" id="15_pp3vs"]
 [ext_resource type="PackedScene" uid="uid://bu1l4mqnm47v8" path="res://office_building.tscn" id="15_vplvd"]
@@ -140,7 +139,9 @@ size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("6_qx76h")
 theme_override_font_sizes/font_size = 30
 text = "Money: "
-script = ExtResource("9_uyxg6")
+script = ExtResource("9_6axbl")
+displayed_value_from_StatManager = "money"
+describtion_text = "Money: "
 metadata/_edit_use_anchors_ = true
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="Control/Stats"]
@@ -160,7 +161,9 @@ size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("6_qx76h")
 theme_override_font_sizes/font_size = 30
 text = "Income/day: "
-script = ExtResource("6_3dug8")
+script = ExtResource("10_c1i0v")
+displayed_value_from_StatManager = "get_daily_income"
+describtion_text = "Income/day: "
 metadata/_edit_use_anchors_ = true
 
 [node name="HBoxContainer5" type="HBoxContainer" parent="Control/Stats"]
@@ -180,7 +183,9 @@ size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("6_qx76h")
 theme_override_font_sizes/font_size = 30
 text = "turnover: "
-script = ExtResource("12_7hx4y")
+script = ExtResource("9_6axbl")
+displayed_value_from_StatManager = "turnover"
+describtion_text = "turnover: "
 metadata/_edit_use_anchors_ = true
 
 [node name="HBoxContainer7" type="HBoxContainer" parent="Control/Stats"]
