@@ -70,7 +70,8 @@ func next_day() -> void:
 	if days_passed % 20 == 0:
 		# turnover cycle ended
 		if turnover < get_required_turnover():
-			get_tree().quit()
+			EventCentre.loss.emit()
+			
 		turnover_cycle += 1
 	
 
@@ -97,4 +98,4 @@ func get_reputation_for_new_project() -> float:
 
 
 func get_required_turnover() -> float:
-	return 3000 * pow(3, pow(1.6,turnover_cycle))
+	return 1500 * pow(3, pow(1.5,turnover_cycle)) + 3000

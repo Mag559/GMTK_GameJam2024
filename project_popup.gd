@@ -31,8 +31,11 @@ func _ready():
 	$VBoxContainer3/Label4.text = "cost: " + str(projects[projects_to_choose_from[2]][1])
 	$VBoxContainer3/Label7.text = "describtion: " + str(projects[projects_to_choose_from[2]][2])
 	$Button2.disabled = StatManager.money < projects[projects_to_choose_from[0]][1]
+	$Button2.update_based_on_disabled()
 	$Button3.disabled = StatManager.money < projects[projects_to_choose_from[1]][1]
+	$Button3.update_based_on_disabled()
 	$Button4.disabled = StatManager.money < projects[projects_to_choose_from[2]][1]
+	$Button4.update_based_on_disabled()
 	
 	
 	EventCentre.manual_pause.emit()
