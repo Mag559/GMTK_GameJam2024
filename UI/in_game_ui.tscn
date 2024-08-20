@@ -1,31 +1,41 @@
-[gd_scene load_steps=27 format=3 uid="uid://1sgi2ikosp2n"]
+[gd_scene load_steps=37 format=3 uid="uid://1sgi2ikosp2n"]
 
-[ext_resource type="Script" path="res://UI/add_worker.gd" id="1_gmcku"]
-[ext_resource type="Texture2D" uid="uid://c3efp1402q5xl" path="res://background_v1.png" id="1_xp53m"]
+[ext_resource type="Texture2D" uid="uid://dnrhqae0cjj3m" path="res://textures/background_v2.png" id="1_no3jl"]
 [ext_resource type="Script" path="res://UI/workers_amount.gd" id="2_5dh1u"]
 [ext_resource type="Script" path="res://UI/work_time_amount.gd" id="3_508nb"]
 [ext_resource type="Script" path="res://UI/work_time_slider.gd" id="3_ogbok"]
+[ext_resource type="Script" path="res://UI/add_worker2.gd" id="4_7dawr"]
 [ext_resource type="Texture2D" uid="uid://b0lbdk10a0sf1" path="res://textures/hirework_v1.png" id="4_j8hm2"]
 [ext_resource type="Script" path="res://UI/wage_amount.gd" id="4_xdhf1"]
 [ext_resource type="Script" path="res://UI/wage_slider.gd" id="5_btf2l"]
+[ext_resource type="Texture2D" uid="uid://byi7ajtkfe1x2" path="res://textures/time_behind_v1.png" id="5_yy2ue"]
 [ext_resource type="FontFile" uid="uid://dotdsj6wdrb1o" path="res://karma suture.ttf" id="6_qx76h"]
+[ext_resource type="Texture2D" uid="uid://cv6wa0ix2knc5" path="res://textures/time_sky_v1.png" id="6_w5rm0"]
 [ext_resource type="Script" path="res://UI/cost_of_wages_amount.gd" id="7_6bdht"]
+[ext_resource type="Texture2D" uid="uid://pod8m163twj8" path="res://textures/time_ontop_v1.png" id="7_54u4k"]
+[ext_resource type="Script" path="res://UI/clock.gd" id="7_q6pdr"]
 [ext_resource type="Texture2D" uid="uid://bhoyxve7eppyy" path="res://textures/money_v1.png" id="8_cy5af"]
 [ext_resource type="Script" path="res://StatDisplayer.gd" id="9_6axbl"]
 [ext_resource type="Texture2D" uid="uid://bfr7vqxsl02rg" path="res://textures/hapy_v1.png" id="9_cuc8t"]
 [ext_resource type="Script" path="res://StatDisplayer2.gd" id="10_c1i0v"]
 [ext_resource type="Script" path="res://UI/day_amount.gd" id="11_2ix8e"]
+[ext_resource type="Script" path="res://UI/goal_amount.gd" id="12_kbm6e"]
 [ext_resource type="Texture2D" uid="uid://boqamu73p1fg6" path="res://textures/dollar_v1.png" id="13_vwt7b"]
 [ext_resource type="Texture2D" uid="uid://bqaal481o1nbl" path="res://textures/rep_v1.png" id="15_pp3vs"]
 [ext_resource type="PackedScene" uid="uid://bu1l4mqnm47v8" path="res://office_building.tscn" id="15_vplvd"]
-[ext_resource type="Texture2D" uid="uid://ci2f6b4m26s3a" path="res://textures/sunmoon_v1.png" id="16_0rsx5"]
 [ext_resource type="Texture2D" uid="uid://dneodcgxgotsd" path="res://textures/time_v1.png" id="16_fj40s"]
-[ext_resource type="Script" path="res://UI/choose_project.gd" id="16_stx6t"]
 [ext_resource type="PackedScene" uid="uid://bs3i0eil1be4q" path="res://time_controls.tscn" id="17_0rdfq"]
 [ext_resource type="PackedScene" uid="uid://bhb22of2ufww1" path="res://ReputationBar.tscn" id="20_63vpj"]
+[ext_resource type="Script" path="res://UI/choose_project2.gd" id="21_bnuxd"]
 [ext_resource type="PackedScene" uid="uid://c311yhoe8pxkl" path="res://HappinessBar.tscn" id="24_pcybt"]
 [ext_resource type="Texture2D" uid="uid://qt7oi8omw54k" path="res://textures/bigbox_v1.png" id="26_3cic1"]
 [ext_resource type="Texture2D" uid="uid://baxq3in7e2viv" path="res://textures/chooseproject_v1.png" id="27_1mh46"]
+[ext_resource type="Texture2D" uid="uid://fh22ni2r7hso" path="res://textures/buss.png" id="28_cnqav"]
+[ext_resource type="Script" path="res://UI/ProjectVisuals.gd" id="28_ly5tw"]
+[ext_resource type="Texture2D" uid="uid://c64cs0a0ik7aq" path="res://textures/restr.png" id="29_j0yxf"]
+[ext_resource type="Texture2D" uid="uid://bhdsilyctoaui" path="res://textures/park.png" id="30_m8vv0"]
+[ext_resource type="AudioStream" uid="uid://1oxv6d60s601" path="res://positive_numbers.wav" id="35_2v631"]
+[ext_resource type="PackedScene" uid="uid://dt1cabjvskxba" path="res://boss.tscn" id="35_k1fh0"]
 
 [node name="InGameUI" type="CanvasLayer"]
 
@@ -45,7 +55,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_xp53m")
+texture = ExtResource("1_no3jl")
 stretch_mode = 5
 
 [node name="bigbox" type="TextureRect" parent="Control"]
@@ -70,7 +80,7 @@ offset_right = -0.557678
 offset_bottom = 0.297836
 texture_normal = ExtResource("4_j8hm2")
 stretch_mode = 5
-script = ExtResource("1_gmcku")
+script = ExtResource("4_7dawr")
 metadata/_edit_use_anchors_ = true
 
 [node name="Stats" type="VBoxContainer" parent="Control"]
@@ -86,12 +96,51 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="dollar" type="TextureRect" parent="Control/Stats/HBoxContainer6"]
+[node name="Control" type="Control" parent="Control/Stats/HBoxContainer6"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.2
-texture = ExtResource("16_0rsx5")
+
+[node name="dollar2" type="TextureRect" parent="Control/Stats/HBoxContainer6/Control"]
+layout_mode = 2
+anchor_left = 0.061
+anchor_top = 0.0793684
+anchor_right = 1.061
+anchor_bottom = 1.0
+offset_left = -0.0260005
+offset_top = -0.0319996
+offset_right = -0.0260086
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+texture = ExtResource("5_yy2ue")
 stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="dollar3" type="TextureRect" parent="Control/Stats/HBoxContainer6/Control"]
+layout_mode = 2
+anchor_left = 0.0606061
+anchor_top = 0.0789474
+anchor_right = 1.06061
+anchor_bottom = 1.0
+pivot_offset = Vector2(33, 35)
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+texture = ExtResource("6_w5rm0")
+stretch_mode = 5
+script = ExtResource("7_q6pdr")
+metadata/_edit_use_anchors_ = true
+
+[node name="dollar" type="TextureRect" parent="Control/Stats/HBoxContainer6/Control"]
+layout_mode = 2
+anchor_left = 0.0606061
+anchor_top = 0.0789474
+anchor_right = 1.06061
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+texture = ExtResource("7_54u4k")
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
 
 [node name="Label9" type="Label" parent="Control/Stats/HBoxContainer6"]
 layout_mode = 2
@@ -118,7 +167,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("6_qx76h")
 theme_override_font_sizes/font_size = 28
-text = "amount of employees: "
+text = "number of employees: "
 script = ExtResource("2_5dh1u")
 metadata/_edit_use_anchors_ = true
 
@@ -162,7 +211,7 @@ theme_override_fonts/font = ExtResource("6_qx76h")
 theme_override_font_sizes/font_size = 30
 text = "Income/day: "
 script = ExtResource("10_c1i0v")
-displayed_value_from_StatManager = "get_daily_income"
+displayed_value_from_StatManager = "get_daily_money"
 describtion_text = "Income/day: "
 metadata/_edit_use_anchors_ = true
 
@@ -190,6 +239,22 @@ metadata/_edit_use_anchors_ = true
 
 [node name="HBoxContainer7" type="HBoxContainer" parent="Control/Stats"]
 layout_mode = 2
+size_flags_vertical = 3
+
+[node name="dollar2" type="TextureRect" parent="Control/Stats/HBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.2
+texture = ExtResource("13_vwt7b")
+stretch_mode = 5
+
+[node name="Label10" type="Label" parent="Control/Stats/HBoxContainer7"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("6_qx76h")
+theme_override_font_sizes/font_size = 30
+script = ExtResource("12_kbm6e")
+metadata/_edit_use_anchors_ = true
 
 [node name="TimeControls2" parent="Control" instance=ExtResource("17_0rdfq")]
 layout_mode = 1
@@ -301,7 +366,7 @@ anchor_right = 0.579167
 anchor_bottom = 0.428704
 texture_normal = ExtResource("27_1mh46")
 stretch_mode = 5
-script = ExtResource("16_stx6t")
+script = ExtResource("21_bnuxd")
 metadata/_edit_use_anchors_ = true
 
 [node name="ReputationBar" parent="Control" instance=ExtResource("20_63vpj")]
@@ -346,7 +411,99 @@ position = Vector2(-24, 53)
 scale = Vector2(4, 4)
 texture = ExtResource("9_cuc8t")
 
+[node name="ProjectVisuals" type="Control" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("28_ly5tw")
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Control/ProjectVisuals"]
+visible = false
+layout_mode = 0
+anchor_left = 0.274479
+anchor_top = 0.851852
+anchor_right = 0.348958
+anchor_bottom = 0.921296
+offset_top = -6.10352e-05
+texture = ExtResource("28_cnqav")
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect2" type="TextureRect" parent="Control/ProjectVisuals"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.266667
+anchor_top = 0.728704
+anchor_right = 0.341146
+anchor_bottom = 0.798148
+offset_top = -6.10352e-05
+texture = ExtResource("29_j0yxf")
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect3" type="TextureRect" parent="Control/ProjectVisuals"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.252604
+anchor_top = 0.608333
+anchor_right = 0.327083
+anchor_bottom = 0.677778
+offset_top = -6.10352e-05
+texture = ExtResource("30_m8vv0")
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect4" type="TextureRect" parent="Control/ProjectVisuals"]
+visible = false
+layout_mode = 0
+anchor_left = 0.274479
+anchor_top = 0.851852
+anchor_right = 0.348958
+anchor_bottom = 0.921296
+offset_top = -6.10352e-05
+texture = ExtResource("28_cnqav")
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect5" type="TextureRect" parent="Control/ProjectVisuals"]
+visible = false
+layout_mode = 0
+anchor_left = 0.274479
+anchor_top = 0.851852
+anchor_right = 0.348958
+anchor_bottom = 0.921296
+offset_top = -6.10352e-05
+texture = ExtResource("28_cnqav")
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Boss" parent="Control" instance=ExtResource("35_k1fh0")]
+layout_mode = 1
+anchor_left = 0.404687
+anchor_top = 0.7
+anchor_right = 0.567187
+anchor_bottom = 0.959259
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("35_2v631")
+autoplay = true
+
+[connection signal="button_down" from="Control/Button" to="Control/Button" method="_on_button_down"]
+[connection signal="button_up" from="Control/Button" to="Control/Button" method="_on_button_up"]
+[connection signal="mouse_entered" from="Control/Button" to="Control/Button" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Control/Button" to="Control/Button" method="_on_mouse_exited"]
 [connection signal="pressed" from="Control/Button" to="Control/Button" method="_on_pressed"]
 [connection signal="value_changed" from="Control/HSlider" to="Control/HSlider" method="_on_value_changed"]
 [connection signal="value_changed" from="Control/HSlider2" to="Control/HSlider2" method="_on_value_changed"]
+[connection signal="button_down" from="Control/Button3" to="Control/Button3" method="_on_button_down"]
+[connection signal="button_up" from="Control/Button3" to="Control/Button3" method="_on_button_up"]
+[connection signal="mouse_entered" from="Control/Button3" to="Control/Button3" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Control/Button3" to="Control/Button3" method="_on_mouse_exited"]
 [connection signal="pressed" from="Control/Button3" to="Control/Button3" method="_on_pressed"]

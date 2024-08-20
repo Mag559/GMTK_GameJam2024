@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://bgo6arwbm715y"]
+[gd_scene load_steps=6 format=3 uid="uid://bgo6arwbm715y"]
 
-[ext_resource type="Texture2D" uid="uid://bo0i32e853evb" path="res://icon.svg" id="1_n1lc4"]
+[ext_resource type="Texture2D" uid="uid://c6xhcdrwm2et8" path="res://textures/text_box.png" id="1_1tuk4"]
 [ext_resource type="Script" path="res://project_popup.gd" id="2_03yc8"]
+[ext_resource type="Texture2D" uid="uid://cwpttjrjgdgkt" path="res://textures/proj_box.png" id="3_arby1"]
+[ext_resource type="Texture2D" uid="uid://n40b2mh0ar05" path="res://textures/proj_button.png" id="4_pm670"]
+[ext_resource type="Script" path="res://InteractiveButton.gd" id="5_crxip"]
 
 [node name="Control" type="TextureRect"]
 anchors_preset = -1
@@ -11,8 +14,41 @@ anchor_right = 0.732292
 anchor_bottom = 0.737037
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_n1lc4")
+texture = ExtResource("1_1tuk4")
 script = ExtResource("2_03yc8")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0811919
+anchor_top = 0.113713
+anchor_right = 0.315519
+anchor_bottom = 0.839465
+texture = ExtResource("3_arby1")
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.395683
+anchor_top = 0.107024
+anchor_right = 0.63001
+anchor_bottom = 0.832776
+texture = ExtResource("3_arby1")
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.696813
+anchor_top = 0.108696
+anchor_right = 0.93114
+anchor_bottom = 0.834448
+texture = ExtResource("3_arby1")
+stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="."]
@@ -27,90 +63,147 @@ offset_bottom = 0.226
 text = "X"
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.117163
-anchor_top = 0.152174
-anchor_right = 0.293936
-anchor_bottom = 0.277592
-metadata/_edit_use_anchors_ = true
-
-[node name="Label4" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.124358
-anchor_top = 0.381271
-anchor_right = 0.301131
-anchor_bottom = 0.506689
-metadata/_edit_use_anchors_ = true
-
-[node name="Label2" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.406989
-anchor_top = 0.152174
-anchor_right = 0.583762
-anchor_bottom = 0.277592
-metadata/_edit_use_anchors_ = true
-
-[node name="Label5" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.405961
-anchor_top = 0.411371
-anchor_right = 0.582734
-anchor_bottom = 0.536789
-metadata/_edit_use_anchors_ = true
-
-[node name="Label3" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.725591
-anchor_top = 0.14214
-anchor_right = 0.902364
-anchor_bottom = 0.267559
-metadata/_edit_use_anchors_ = true
-
-[node name="Label6" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.72148
-anchor_top = 0.438127
-anchor_right = 0.898253
-anchor_bottom = 0.563545
-metadata/_edit_use_anchors_ = true
-
-[node name="Button2" type="Button" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-anchor_left = 0.129496
-anchor_top = 0.643813
-anchor_right = 0.27852
-anchor_bottom = 0.765886
-text = "choose"
+anchor_left = 0.0986639
+anchor_top = 0.170568
+anchor_right = 0.300103
+anchor_bottom = 0.67224
 metadata/_edit_use_anchors_ = true
 
-[node name="Button3" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.42446
-anchor_top = 0.633779
-anchor_right = 0.573484
-anchor_bottom = 0.755853
-text = "choose"
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_alignment = 1
+vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Button4" type="Button" parent="."]
+[node name="Label4" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label7" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.29
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.74409
-anchor_top = 0.622074
-anchor_right = 0.893114
-anchor_bottom = 0.744147
-text = "choose"
+anchor_left = 0.410071
+anchor_top = 0.170569
+anchor_right = 0.61151
+anchor_bottom = 0.672241
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label4" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label7" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.29
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.716341
+anchor_top = 0.16388
+anchor_right = 0.917779
+anchor_bottom = 0.665552
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="VBoxContainer3"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label4" type="Label" parent="VBoxContainer3"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Label7" type="Label" parent="VBoxContainer3"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.29
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Button2" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0996916
+anchor_top = 0.698996
+anchor_right = 0.297019
+anchor_bottom = 0.789297
+texture_normal = ExtResource("4_pm670")
+stretch_mode = 5
+script = ExtResource("5_crxip")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button3" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.715313
+anchor_top = 0.685619
+anchor_right = 0.912641
+anchor_bottom = 0.77592
+texture_normal = ExtResource("4_pm670")
+stretch_mode = 5
+script = ExtResource("5_crxip")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button4" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.41521
+anchor_top = 0.690636
+anchor_right = 0.612538
+anchor_bottom = 0.780937
+texture_normal = ExtResource("4_pm670")
+stretch_mode = 5
+script = ExtResource("5_crxip")
 metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="button_down" from="Button2" to="Button2" method="_on_button_down"]
+[connection signal="button_up" from="Button2" to="Button2" method="_on_button_up"]
+[connection signal="mouse_entered" from="Button2" to="Button2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Button2" to="Button2" method="_on_mouse_exited"]
 [connection signal="pressed" from="Button2" to="." method="choose_project" binds= [0]]
+[connection signal="button_down" from="Button3" to="Button3" method="_on_button_down"]
+[connection signal="button_up" from="Button3" to="Button3" method="_on_button_up"]
+[connection signal="mouse_entered" from="Button3" to="Button3" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Button3" to="Button3" method="_on_mouse_exited"]
 [connection signal="pressed" from="Button3" to="." method="choose_project" binds= [1]]
+[connection signal="button_down" from="Button4" to="Button4" method="_on_button_down"]
+[connection signal="button_up" from="Button4" to="Button4" method="_on_button_up"]
+[connection signal="mouse_entered" from="Button4" to="Button4" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Button4" to="Button4" method="_on_mouse_exited"]
 [connection signal="pressed" from="Button4" to="." method="choose_project" binds= [2]]

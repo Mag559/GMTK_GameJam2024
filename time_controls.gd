@@ -12,7 +12,7 @@ func _ready():
 
 
 func _process(delta):
-	day_progress += delta / 10 * passing_rate
+	day_progress += delta / 5 * passing_rate
 	if day_progress > 1:
 		next_day()
 
@@ -41,9 +41,12 @@ func manual_unpause() -> void:
 func pause(on):
 	if on:
 		passing_rate = 0
-		$Button2.button_pressed = false
-		$Button3.button_pressed = false
-		$Button4.button_pressed = false
+		$Button2.special_unpress()
+		$Button2.mouse_filter = Control.MOUSE_FILTER_STOP
+		$Button3.special_unpress()
+		$Button3.mouse_filter = Control.MOUSE_FILTER_STOP
+		$Button4.special_unpress()
+		$Button4.mouse_filter = Control.MOUSE_FILTER_STOP
 		EventCentre.paused.emit()
 		$Button.mouse_filter = MOUSE_FILTER_IGNORE
 
@@ -59,21 +62,20 @@ func run(toggled_on, new_rate : float):
 			activated_button = $Button4
 	
 	if toggled_on:
-		$Button.button_pressed = false
+		$Button.special_unpress()
 		$Button.mouse_filter = Control.MOUSE_FILTER_STOP
 		
 		if activated_button != $Button2:
-			$Button2.button_pressed = false
+			$Button2.special_unpress()
 			$Button2.mouse_filter = Control.MOUSE_FILTER_STOP
 		if activated_button != $Button3:
-			$Button3.button_pressed = false
+			$Button3.special_unpress()
 			$Button3.mouse_filter = Control.MOUSE_FILTER_STOP
 		if activated_button != $Button4:
-			$Button4.button_pressed = false
+			$Button4.special_unpress()
 			$Button4.mouse_filter = Control.MOUSE_FILTER_STOP
 		
 		activated_button.mouse_filter = Control.MOUSE_FILTER_IGNORE
-		activated_button.mouse_filter = Control.MOUSE_FILTER_STOP
 		
 		if passing_rate == 0:
 			passing_rate = new_rate

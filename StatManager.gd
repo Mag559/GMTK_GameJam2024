@@ -31,6 +31,8 @@ var reputation_required_for_last_project := 0.0
 
 var run_seed : int
 
+var turnover_cycle := 1.0
+
 
 func _ready():
 	randomize()
@@ -48,6 +50,10 @@ func get_daily_wages_cost() -> float:
 	return work_time * wage_per_hour * employees
 
 
+func get_daily_money() -> float:
+	return get_daily_income() - get_daily_wages_cost()
+
+
 func get_happiness() -> float:  # can go negative
 	return happiness_mult * (wage_per_hour / reference_wage_per_hour
 	 - (work_time + work_time_add_on) / reference_work_time) + happiness_add_on
@@ -60,8 +66,12 @@ func next_day() -> void:
 	turnover += get_daily_income()
 	check_if_new_project()
 	days_passed += 1
-	print("====")
-	print(Time.get_ticks_msec())
+	
+	if days_passed % 20 == 0:
+		# turnover cycle ended
+		if turnover < get_required_turnover():
+			get_tree().quit()
+		turnover_cycle += 1
 	
 
 func get_new_employee_cost() -> float:
@@ -84,3 +94,7 @@ func check_if_new_project() -> void:
 func get_reputation_for_new_project() -> float:
 	return pow(reputation_required_exponential_base, (projects_earned + 2)) \
 	 + reputation_required_add_on * (projects_earned + 1)
+
+
+func get_required_turnover() -> float:
+	return 3000 * pow(3, pow(1.6,turnover_cycle))
